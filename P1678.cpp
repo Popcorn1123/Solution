@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
-int m, n, stu[100001], sch[100001], ans = 0, mid, l, r;
+int m, n, stu[100001], sch[100001], mid, l, r;
+long long ans = 0;
 signed main() {
 	cin >> m >> n; // m表示学校数 n表示学生数
 	for (int i = 1;i <= m;++i) {
