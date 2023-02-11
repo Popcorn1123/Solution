@@ -17,7 +17,7 @@ signed main() {
 		else
 			puts("28");
 	}
-	if (m == 1  || 
+	else if (m == 1  || 
 		m == 3  || 
 		m == 5  || 
 		m == 7  || 
@@ -25,6 +25,6 @@ signed main() {
 		m == 10 || 
 		m == 12 )
 		puts("31");
-	else 
+	else
 		puts("30");
 }
