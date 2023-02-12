@@ -28,8 +28,7 @@ signed main() {
 	read(arr[1]),read(arr[2]),read(arr[3]);
 	sort(arr+1,arr+4);
 	cin>>(opt+1);
-	int i;
-	for(i=1;i<=3;++i){
+	fz(i,1,3){
 		switch(opt[i]) {
 			case 'A':
 				printf("%d ",arr[1]);
