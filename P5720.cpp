@@ -2,10 +2,9 @@
 using namespace std;
 #define fi first
 #define se second
-#define fz(i,a,b) for(int i=a;i<=b;++i)
-#define fd(i,a,b) for(int i=a;i>=b;--i)
-#define rpt(n) for(int _tmp=1;_tmp<=n;++_tmp)
-#define ffe(it,v) for(__typeof(v.begin()) it=v.begin();it!=v.end();++it)
+#define fz(i,a,b) for(int i=a;i<=b;i++)
+#define fd(i,a,b) for(int i=a;i>=b;i--)
+#define ffe(it,v) for(__typeof(v.begin()) it=v.begin();it!=v.end();it++)
 #define fill0(a) memset(a,0,sizeof(a))
 #define fill1(a) memset(a,-1,sizeof(a))
 #define fillbig(a) memset(a,63,sizeof(a))
@@ -23,6 +22,13 @@ template<typename T> void read(T &x){
 	x*=neg;
 }
 const int INF=0x3f3f3f3f;
+int n,s=1;
 signed main() {
-	
+	read(n);
+	while(n!=1){
+		n/=2;
+		++s;
+	}
+	printf("%d",s);
+	return 0;
 }

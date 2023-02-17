@@ -23,6 +23,11 @@ template<typename T> void read(T &x){
 	x*=neg;
 }
 const int INF=0x3f3f3f3f;
+int n,s;
 signed main() {
-	
+	read(n);
+	// cout<<(1+n)*n*0.5<<endl; // sigma
+	fz(i,1,n) s+=i; //repeat
+	cout<<s<<endl;
+	return 0;
 }

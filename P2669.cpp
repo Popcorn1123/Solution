@@ -5,7 +5,7 @@ using namespace std;
 #define fz(i,a,b) for(int i=a;i<=b;++i)
 #define fd(i,a,b) for(int i=a;i>=b;--i)
 #define rpt(n) for(int _tmp=1;_tmp<=n;++_tmp)
-#define ffe(it,v) for(__typeof(v.begin()) it=v.begin();it!=v.end();++it)
+#define ffe(it,v) for(__typeof(v.begin()) it=v.begin();it!=v.end();it++)
 #define fill0(a) memset(a,0,sizeof(a))
 #define fill1(a) memset(a,-1,sizeof(a))
 #define fillbig(a) memset(a,63,sizeof(a))
@@ -23,6 +23,18 @@ template<typename T> void read(T &x){
 	x*=neg;
 }
 const int INF=0x3f3f3f3f;
+int k,s=1,tot;
 signed main() {
-	
+	read(k);
+	while(1){
+		if(k-s<0){
+			rpt(k) tot+=s;
+			break;
+		}
+		rpt(s) tot+=s;
+		k-=s;
+		++s;
+	}
+	cout<<tot<<endl;
+	return 0;
 }
