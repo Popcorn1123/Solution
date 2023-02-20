@@ -23,11 +23,20 @@ template<typename T> void read(T &x){
 	x*=neg;
 }
 const int INF=0x3f3f3f3f;
-int n;
-int dfs(int i){
-	//。。。不想写了下次再写吧
-}
+int n,q,x,y,opt,k;
+map<int,map<int,int> > a;
 signed main() {
-	read(n);
-	dfs(1);
+	cin>>n>>q;
+	while(q--){
+		read(opt);
+		if(opt==1){
+			read(x),read(y),read(k);
+			a[x][y]=k;
+		}
+		if(opt==2){
+			read(x),read(y);
+			printf("%d\n",a[x][y]);
+		}
+	}
+	return 0;
 }

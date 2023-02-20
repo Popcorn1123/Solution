@@ -23,11 +23,14 @@ template<typename T> void read(T &x){
 	x*=neg;
 }
 const int INF=0x3f3f3f3f;
-int n;
-int dfs(int i){
-	//。。。不想写了下次再写吧
-}
+const int MAXN=2000001;
+int n,m,tmp,q[MAXN];
 signed main() {
-	read(n);
-	dfs(1);
+	cin>>n>>m;
+	fz(i,1,n) read(q[i]);
+	while(m--){
+		read(tmp);
+		printf("%d\n",q[tmp]);
+	}
+	return 0;
 }
