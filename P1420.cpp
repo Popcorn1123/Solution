@@ -22,6 +22,18 @@ template<typename T> void read(T &x){
 	x*=neg;
 }
 const int INF=0x3f3f3f3f;
+const int MAXN=10001;
+int n,lin1,lin2,sum=1,ans;
 signed main() {
-	
+	cin>>n;
+	cin>>lin1;
+	fz(i,1,n-1){
+		read(lin2);
+		if(lin2-lin1==1)sum++;
+		else sum=1;
+		lin1=lin2;
+		chkmax(ans,sum);
+	}
+	cout<<ans<<endl;
+	return 0;
 }

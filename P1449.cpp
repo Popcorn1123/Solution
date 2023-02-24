@@ -4,6 +4,7 @@ using namespace std;
 #define se second
 #define fz(i,a,b) for(int i=a;i<=b;++i)
 #define fd(i,a,b) for(int i=a;i>=b;--i)
+#define rpt(n) for(int _tmp=1;_tmp<=n;++_tmp)
 #define ffe(it,v) for(__typeof(v.begin()) it=v.begin();it!=v.end();++it)
 #define fill0(a) memset(a,0,sizeof(a))
 #define fill1(a) memset(a,-1,sizeof(a))
@@ -22,6 +23,42 @@ template<typename T> void read(T &x){
 	x*=neg;
 }
 const int INF=0x3f3f3f3f;
+stack<int> st;
+char opt;
+int n,x,y;
 signed main() {
-	
+	while(1){
+		opt=getchar();
+		// cin>>opt;
+		if(opt=='@') break;
+		if(opt=='+'){
+			y=st.top();st.pop();
+			x=st.top();st.pop();
+			st.push(x+y);
+		}
+		if(opt=='-'){
+			y=st.top();st.pop();
+			x=st.top();st.pop();
+			st.push(x-y);
+		}
+		if(opt=='*'){
+			y=st.top();st.pop();
+			x=st.top();st.pop();
+			st.push(x*y);
+		}
+		if(opt=='/'){
+			y=st.top();st.pop();
+			x=st.top();st.pop();
+			st.push(x/y);
+		}
+		if(opt=='.'){
+			st.push(n);
+			n=0;
+		}
+		if(opt>='0'&&opt<='9'){ //会读入其他字符
+			n=n*10+opt-'0';
+		}
+	}
+	cout<<st.top()<<endl;
+	return 0;
 }

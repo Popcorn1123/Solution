@@ -22,6 +22,14 @@ template<typename T> void read(T &x){
 	x*=neg;
 }
 const int INF=0x3f3f3f3f;
+int minn=INF,maxn=-1,n,tmp;
 signed main() {
-	
+	cin>>n;
+	fz(i,1,n){
+		read(tmp);
+		chkmin(minn,tmp);
+		chkmax(maxn,tmp);
+	}
+	cout<<maxn-minn<<endl;
+	return 0;
 }

@@ -22,6 +22,18 @@ template<typename T> void read(T &x){
 	x*=neg;
 }
 const int INF=0x3f3f3f3f;
+int ans,n,w,p;
 signed main() {
-	
+	cin>>n;
+	fd(i,100,1){
+		w=p=0;
+		fz(j,1,n){
+			p=i*7+j*21;
+			w=n/p;
+			if(w*p==n&&w==52){
+				cout<<i<<endl<<j<<endl;
+				return 0;
+			}
+		}
+	}
 }

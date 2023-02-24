@@ -22,6 +22,36 @@ template<typename T> void read(T &x){
 	x*=neg;
 }
 const int INF=0x3f3f3f3f;
+const int MAXN=101;
+int n,m,pre[MAXN],p,cnt;//p是当前节点的前驱节点
+queue<int> q;
+void subtask1(){
+	fz(i,0,n-1){//这里因为下面的p=pre[p]要执行m-1次 如果不从0开始赋值
+		pre[i]=i+1;
+	}
+	pre[n]=1; //构建循环链表
+	fz(_,1,n){
+		fz(__,1,m-1){ //移动m-1次到达被杀的人前面一个位置
+			p=pre[p];
+		}
+		cout<<pre[p]<<" ";//pre[p]就是被杀的人
+		pre[p]=pre[pre[p]];
+	}
+}
+void subtask2(){
+	fz(i,1,n){
+		q.push(i);
+	}
+	while(!q.empty()){
+		cnt++;
+		if(cnt%m) q.push(q.front()),q.pop();
+		else printf("%d ",q.front()),q.pop();
+	}
+}
 signed main() {
+	cin>>n>>m;
+	// subtask1(); //链表
+	subtask2(); //队列
 	
+	return 0;
 }

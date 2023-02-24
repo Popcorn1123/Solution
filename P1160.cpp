@@ -22,6 +22,34 @@ template<typename T> void read(T &x){
 	x*=neg;
 }
 const int INF=0x3f3f3f3f;
+struct node{
+	int l,r;
+	bool kicked;
+}g[100001];
+int n,m,k,p;
+void add(int u,int k,int p){//把u节点插到k的左边或右边
+	if(p==1){
+		g[u].r=g[k].r;g[g[k].r].l=u;
+		g[u].l=k;g[k].r=u;
+	}else{
+		g[u].l=g[k].l,g[g[k].l].r=u;
+		g[u].r=k,g[k].l=u;
+	}
+}
 signed main() {
-	
+	cin>>n;
+	add(1,0,1);
+	fz(i,2,n){
+		read(k),read(p);
+		add(i,k,p);
+	}
+	cin>>m;
+	while(m--){
+		read(k);
+		g[k].kicked=1;
+	}
+	for(int i=g[0].r;i;i=g[i].r){
+		if(!g[i].kicked) printf("%d ",i);
+	}
+	return 0;
 }

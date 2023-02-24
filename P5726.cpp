@@ -22,6 +22,16 @@ template<typename T> void read(T &x){
 	x*=neg;
 }
 const int INF=0x3f3f3f3f;
+int n,tmp,maxn=-1,minn=INF,sum;
 signed main() {
-	
+	cin>>n;
+	fz(i,1,n){
+		read(tmp);
+		chkmax(maxn,tmp);
+		chkmin(minn,tmp);
+		sum+=tmp;
+	}
+	sum=sum-maxn-minn;
+	printf("%.2lf",1.0*sum/(n-2));
+	return 0;
 }

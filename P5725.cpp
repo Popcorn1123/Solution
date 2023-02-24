@@ -22,6 +22,39 @@ template<typename T> void read(T &x){
 	x*=neg;
 }
 const int INF=0x3f3f3f3f;
+int n,sum;
+void subtask1(int n){
+	sum=0;
+	fz(i,1,n){
+		fz(j,1,n){
+			sum++;
+			if(sum<10){
+				printf("0%d",sum);
+			} else printf("%d",sum);
+		}
+		printf("\n");
+	}
+}
+void subtask2(int n){
+	sum=0;
+	fz(i,1,n){
+		fz(_,1,(n-i)*2) printf(" ");
+		fz(j,1,i){
+			sum++;
+			if(sum<10){
+				printf("0%d",sum);
+			} else printf("%d",sum);
+		}
+		printf("\n");
+	}
+}
 signed main() {
+	cin>>n;
+	subtask1(n);
 	
+	printf("\n");
+	
+	subtask2(n);
+	
+	return 0;
 }
