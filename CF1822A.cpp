@@ -22,26 +22,23 @@ template<typename T> void read(T &x){
 	x*=neg;
 }
 const int INF=0x3f3f3f3f;
-int n,m,pe[11]={1};
-void print(int b){
-	fz(i,1,b-1){
-		printf("%d+",pe[i]);
-	}
-	printf("%d\n",pe[b]);
-}
-void dfs(int d){
-	fz(i,pe[d-1],m){//后面的数大于前面的数
-		if(i==n)return;
-		pe[d]=i;
-		m-=i;
-		if(m==0) print(d);
-		else dfs(d+1);
-		m+=i;
-	}
-}
+int T,a[101],b[101],n,m,mx,mxid;
 signed main() {
-	scanf("%d",&n);
-	m=n;
-	dfs(1);
+	cin>>T;
+	while(T--){
+		mx=0,mxid=-1;
+		read(n),read(m);
+		fz(i,1,n) read(a[i]);
+		fz(i,1,n) read(b[i]);
+		fz(i,1,n){
+			if(a[i]+i-1<=m){
+				if(b[i]>mx){
+					mx=b[i];
+					mxid=i;
+				}
+			}
+		}
+		printf("%d\n",mxid);
+	}
 	return 0;
 }
